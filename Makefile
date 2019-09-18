@@ -23,12 +23,11 @@ PREFIX_INCLUDE=/wsu/home/fy/fy41/fy4125/Software/pythia8230/include
 PREFIX_LIB=/wsu/home/fy/fy41/fy4125/Software/pythia8230/lib
 PREFIX_SHARE=/wsu/home/fy/fy41/fy4125/Software/pythia8230/share/Pythia8
 ENABLE_SHARED=true
-CXX=g++
+CXX=g++  -std=c++17
 CXX_COMMON=-O2  -pedantic -W -Wall -Wshadow -fPIC
 CXX_SHARED=-shared
 CXX_SONAME=-Wl,-soname,
 LIB_SUFFIX=.so
-
 
 FASTJET3_USE=true
 FASTJET3_BIN=/wsu/home/fy/fy41/fy4125/Software/fastjet/bin/
