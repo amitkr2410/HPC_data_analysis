@@ -8,13 +8,9 @@
 // Note that the plots are saved in two format TH1F and TGraphErrors
 
 #include <iostream>
-
 // FastJet3 library.
-
 #include "/wsu/home/fy/fy41/fy4125/Software/pythia8230/include/Pythia8/Pythia.h"
 #include "/wsu/home/fy/fy41/fy4125/Software/pythia8230/include/Pythia8/FJcore.h"
-
-
 #include <fstream>
 #include <cstdio>
 #include "iomanip"
