@@ -47,30 +47,36 @@
 #include "TCanvas.h"
 #include "TGraphErrors.h"
 #include "TMath.h"
-
+#include "TROOT.h"
 using namespace std;
 using namespace Pythia8;
 using namespace fjcore;
 int main(int argc, char **argv){
   double PI=3.1415926;
-    int nListJets =1;  // for output control
-    int StartTime = time(NULL);
+    int StartTime = time(NULL);    
+    //gROOT->SetBatch(); 
     //TApplication theApp("hist", &argc, argv);   
     //By default we want to look at only one pTHatBin spectrum
-    int pTHatMin[1]={11};
-    int pTHatMax[1]={13};
-    int NpTHardBin = sizeof(pTHatMin)/sizeof(pTHatMin[0]); //sizeof(pTHatMin[]); or sizeof(pTHatMax[]); // # of bin we analyze
-    //    int *pTHatMin;
-    //int *pTHatMax;
-    //int NpTHardBin;
-    //[1]InputDataFilesAddress, [2]OutputDataFileName,  [3]=CMS or ATLAS or ALICE or STAR, [4]= 200, 2760 or 5020, 7000, [5]SingleHadronEtaCut,          [6]EtaCutFlag, [7]=ChargedFlag=0 or 1 (all or charged), [8]=Jetscape or Pythia, [9] Hadron or Parton
+    //int pTHatMin[1]={11};
+    //int pTHatMax[1]={13};
+    //int NpTHardBin = sizeof(pTHatMin)/sizeof(pTHatMin[0]); //sizeof(pTHatMin[]); or sizeof(pTHatMax[]); // # of bin we analyze
+    int *pTHatMin;
+    int *pTHatMax;
+    int NpTHardBin;
+    //[1]InputDataFileDIR, [2]OutputDataFileName,  [3]=CMS or ATLAS or ALICE or STAR, [4]= 200, 2760 or 5020, 7000, [5]SingleHadronEtaCut,          [6]EtaCutFlag, [7]=ChargedFlag=0 or 1 (all or charged), [8]=Jetscape or Pythia, [9] Hadron or Parton [10] BGS
+    char InputDataFileDIR[100000], OutputDataFileName[100000], JetscapeORPythia[100], HadronORParton[100];
+    sprintf(InputDataFileDIR,"%s",argv[1]);
+    sprintf(OutputDataFileName,"%s",argv[2]);
+    sprintf(JetscapeORPythia,"%s",argv[8]);
+    sprintf(HadronORParton,"%s",argv[9]);
 
     string ExpName=std::string(argv[3]);
     int Ecm = atoi(argv[4]);
     double SingleHadronEtaCut=atof(argv[5])/1.0;
     int EtaCutFlag =atoi(argv[6]); //0 or 1; 0 to use rapididty cut, 1 to use eta cut
     int ChargedFlag = atoi(argv[7]); // 0 or 1; 0 means all particle, 1 means only charged
-    /*
+    int BGS=atoi(argv[10]);
+    
     if(  Ecm == 200 )
       {
 	int Bin1[23] = { 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 17, 20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 90};
@@ -96,8 +102,8 @@ int main(int argc, char **argv){
 	    pTHatMin[i] = Bin1[i];       pTHatMax[i] = Bin2[i];
 	  }
       }
-*/
-    double DetectorEtaCut= 3.0;
+
+
     int NumberOfFiles=1;
     int Events[NpTHardBin];
     double HardCrossSection[NpTHardBin], HardCrossSectionError[NpTHardBin];
@@ -106,7 +112,7 @@ int main(int argc, char **argv){
     //Variable for single hadron spectrum
     //double SingleHadronpTBin[26] = {0.5, 0.7, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 12, 14, 16, 18, 20};
     //int NpTSingleHadronBin = 26-1;
-    if(  Ecm == 5020 && ExpName=="CMS"  && SingleHadronEtaCut==1.0  && EtaCutFlag==1 && ChargedFlag==1)
+    if(  Ecm == 5020 && ExpName=="CMS"  && SingleHadronEtaCut==1.0  && EtaCutFlag==1)
       {
 	double Bin[38] ={0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.4, 1.6,  1.8, 2, 2.2, 2.4, 3.2, 4, 4.8, 5.6, 6.4, 7.2, 9.6, 12, 14.4, 19.2, 24,                        28.8, 35.2, 41.6, 48, 60.8, 73.6, 86.4, 103.6, 120.8, 140, 165, 250, 400};
 	NpTSingleHadronBin = 38-1;
@@ -123,56 +129,64 @@ int main(int argc, char **argv){
     double TotalDifferentialSingleHadronYieldError[NpTSingleHadronBin];
     double InelasticCS = 70.0;//CMS 5.02TeV (70mb)
 
+
     // Histograms.1. Number of jets vs pT of the jet. 2. Number of charged hadron vs pT of the hadron
     TH1D *HistTempSingleHadron = new TH1D("SingleHadronSpectrumBin", "Single Hadron Spectrum pT", NpTSingleHadronBin, SingleHadronpTBin); //CountVspT for single-hadron
+    TH1D *HistTempSingleHadronPositive = new TH1D("SingleHadronSpectrumPositive", "Single Hadron Spectrum pT", NpTSingleHadronBin, SingleHadronpTBin);
+    TH1D *HistTempSingleHadronNegative = new TH1D("SingleHadronSpectrumNegative", "Single Hadron Spectrum pT", NpTSingleHadronBin, SingleHadronpTBin);
 
-    ofstream EventR, EventA, foutput;
-    char EventFile[50000];sprintf(EventFile,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/EventRecord%s.txt",argv[2]);
-    EventR.open(EventFile,ios::out);
-    char DataFile[50000];
-    sprintf(DataFile,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/CodeCheck%s.txt",argv[2]);
-    EventA.open(DataFile,ios::out);
-    char outFileName[10000];
-    sprintf(outFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/%s.root",argv[2]); // name of the output root file  
-    TFile* outFile = new TFile( outFileName, "RECREATE");
+    ofstream EventR, EventA, foutput; char VarFileName[100000];
+    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/EventRecord%s.txt",OutputDataFileName);
+    EventR.open(VarFileName,ios::out);
+    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/CodeCheck%s.txt",OutputDataFileName);
+    EventA.open(VarFileName,ios::out);
+    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/%s.root",OutputDataFileName); // name of the output root file  
+    TFile* outFile = new TFile( VarFileName, "RECREATE");
 
-    sprintf(EventFile,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/%s.txt",argv[2]);
-    foutput.open(EventFile,ios::out);
-    cout<<"Final result will be store in  File="<<EventFile<<endl;
+    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/%s.txt",OutputDataFileName);
+    foutput.open(VarFileName,ios::out);
+    cout<<"Final result will be store in  File="<<VarFileName<<endl;
     std::vector <int> chargeList;    
     Pythia8::Pythia pythia;//("",false);
-    int FakeEventCount=0;
 
+    EventA<<"OutputFile Name is "<<VarFileName<<endl;
     cout<<"These are pTHat loops "<<endl;
+   
     // For loop to open different pTHat bin files, in this default example, only one file
     for (int k = 0; k<NpTHardBin; ++k) //NpTHardBin
     {
-        char HadronFile[300], pTBinString[100];        
+        char pTBinString[100];        
         sprintf(pTBinString,"Current pTHatBin is %i (%i,%i) GeV",k,pTHatMin[k],pTHatMax[k]);
 	EventA<<pTBinString<<endl;
         int  SN=0,PID=0,pStat=0;
         double Px, Py, Pz, E, Eta, Phi;
-        Events[k]=0;
 	int EventsPerFile=0;
-        int TriggeredJetNumber=0;
         double SumE=0, SumPx=0, SumPy=0, SumPz=0;
-
+	Events[k]=0;
         // Reset for each pTHardBin
         char HistName[10000];        
-
-        
+      
         HistTempSingleHadron->Reset();
         sprintf(HistName,"CountVspTSingleHadronSpectrumBin%i_%i",pTHatMin[k],pTHatMax[k]);
-        HistTempSingleHadron->SetName(HistName);        
-        chargeList.resize(0);
+        HistTempSingleHadron->SetName(HistName); 
+	
+	HistTempSingleHadronPositive->Reset();
+        sprintf(HistName,"CountVspTSingleHadronSpectrumBin%i_%iPositive",pTHatMin[k],pTHatMax[k]);
+        HistTempSingleHadronPositive->SetName(HistName);
+
+	HistTempSingleHadronNegative->Reset();
+        sprintf(HistName,"CountVspTSingleHadronSpectrumBin%i_%iNegative",pTHatMin[k],pTHatMax[k]);
+        HistTempSingleHadronNegative->SetName(HistName);
 
 	for(int FileIndex=0; FileIndex<NumberOfFiles; FileIndex++)
 	  {
-	    char HadronFile[30000], HardCrossSectionFile[100000], pTBinString[10000];
-	    sprintf(HadronFile,"%s/%s%sListBin%i_%i.out",argv[1], argv[8], argv[9], pTHatMin[k],pTHatMax[k]);  // name of the input file  
-	    sprintf(HardCrossSectionFile,"%s/SigmaHardBin%i_%i.out",argv[1],  pTHatMin[k],pTHatMax[k]);
-	    sprintf(pTBinString,"Current Bin is %i pTHatBin(%i,%i) GeV and file is ",k,pTHatMin[k],pTHatMax[k], FileIndex);        
+	    char HadronFile[30000], HardCrossSectionFile[100000];
+	    sprintf(HadronFile,"%s/%s%sListBin%i_%i.out",InputDataFileDIR,JetscapeORPythia,HadronORParton, pTHatMin[k],pTHatMax[k]);  // name of the input file  
+	    sprintf(HardCrossSectionFile,"%s/SigmaHardBin%i_%i.out",InputDataFileDIR,pTHatMin[k],pTHatMax[k]);
+	    sprintf(pTBinString,"Current Bin is %i pTHatBin(%i,%i) GeV and file is %i",k,pTHatMin[k],pTHatMax[k], FileIndex);        
 	    EventA<<pTBinString<<endl;
+	    EventA<<"Hadron File ="<<HadronFile<<endl;
+	    EventA<<"HardCrossSectionFile="<<HardCrossSectionFile<<endl;
 	    EventsPerFile =0;
 	    // Read file
 	    string EventLabel, MyString("#");
@@ -190,23 +204,33 @@ int main(int argc, char **argv){
 		    double PT = TMath::Sqrt( pow(Px ,2.0) + pow(Py , 2.0) );double ModP = sqrt(Px*Px + Py*Py + Pz*Pz);
 		    double Phi2 = atan2(Py,Px);double Eta = 0.5*log((ModP+Pz)/(ModP-Pz));
 		    double Rapidity= 0.5*log((E+Pz)/(E-Pz));
-		    SumE= SumE + E; SumPx = SumPx + Px; SumPy= SumPy + Py; SumPz = SumPz + Pz;
 		    
 		    if(EtaCutFlag==0){Eta = Rapidity;}
 		    // Add this particle into SingleHadron spectrum
-		    if(pStat>=0 && fabs(Eta) < SingleHadronEtaCut && PT>0.01 && fabs(PID) > 100 &&  ChargedFlag==1 && pythia.particleData.charge( PID )!=0  )
+		    if(pStat>=0 && fabs(Eta) < SingleHadronEtaCut && PT>0.01)
 		      {
 			//cout<<"PID "<<PID<<"\t charge = "<<pythia.particleData.charge( PID)<<endl;
-			HistTempSingleHadron->Fill(PT); // fill pT distribution of single hadron
+			if(ChargedFlag==1 && pythia.particleData.charge( PID )!=0 && fabs(PID) > 100)
+			  {
+			    HistTempSingleHadronPositive->Fill(PT); // fill pT distribution of single hadron
+			  }
+
+			if(ChargedFlag==0)
+                          {
+                            HistTempSingleHadronPositive->Fill(PT); // fill pT distribution of single hadron  
+			  }
+			SumE= SumE + E; SumPx = SumPx + Px; SumPy= SumPy + Py; SumPz = SumPz + Pz;
 		      }
 
-		    if(pStat>=0  && fabs(Eta) < SingleHadronEtaCut && PT>0.01 && ChargedFlag==0) 
+		    if(pStat<0 && fabs(Eta) < SingleHadronEtaCut) 
 		    {
-		      //cout<<"PID "<<PID<<"\t charge = "<<pythia.particleData.charge( PID)<<endl;                                            
-		      HistTempSingleHadron->Fill(PT); // fill pT distribution of single hadron                                                
+		      //cout<<"PID "<<PID<<"\t charge = "<<pythia.particleData.charge( PID)<<endl;
+		      HistTempSingleHadronNegative->Fill(PT); // fill pT distribution of single hadron       
+		      SumE= SumE - E; SumPx = SumPx - Px; SumPy= SumPy - Py; SumPz = SumPz - Pz;
 		    }
 		    
-		  }		
+		  }
+		
 		if(MyString.compare(EventLabel)==0)
 		  {
 		    for(int i=0;i<8;i++) { myfile >> EventLabel;cout<<EventLabel<<" ";}
@@ -215,15 +239,22 @@ int main(int argc, char **argv){
 		    cout<<"\n"<<HadronFile<<endl;
 		  }
 	      }
-	    EventA<<"File i="<<FileIndex<<" has total events="<<EventsPerFile<<", Sum event with pT>110GeV are = "<<FakeEventCount<<endl;
-	    cout<<"File i="<<FileIndex<<" has total events="<<EventsPerFile<<", Sum event with pT>110GeV are = "<<FakeEventCount<<endl;
+	    EventA<<"File k="<<k<<",i="<<FileIndex<<" has total events="<<EventsPerFile<<endl;
+	    cout<<"File k="<<k<<",i="<<FileIndex<<" has total events="<<EventsPerFile<<endl;
 	    //read hard cross section ptHat	    
 	    myfile2>>HardCrossSection[k]>>HardCrossSectionError[k];
 	    // end of reading cross section
 	    myfile.close();
 	    myfile2.close();
 	  }//end of reading  files for same pTHatBins 
-
+	if(BGS==1)
+	  {
+	    HistTempSingleHadron->Add(HistTempSingleHadronPositive, HistTempSingleHadronNegative,1.0,-1.0);
+	  }
+	else
+	  {
+	    HistTempSingleHadron->Add(HistTempSingleHadronPositive, HistTempSingleHadronNegative,1.0,0.0);
+	  }
 	    //For single Hadron spectrum
 	    for(int j=0;j<NpTSingleHadronBin;j++)
 	      {
@@ -246,8 +277,17 @@ int main(int argc, char **argv){
 	      }    
     
 	    //Write histogram into a root file
-	    HistTempSingleHadron->Write();
-	    
+	    if(BGS==1)
+	      {
+		HistTempSingleHadron->Write();
+		HistTempSingleHadronPositive->Write();
+		HistTempSingleHadronNegative->Write();
+	      }
+	    else
+	      {
+		HistTempSingleHadron->Write();
+	      }
+
 	    TVector EventInfo(3);
 	    EventInfo[0] = HardCrossSection[k];
 	    EventInfo[1] = HardCrossSectionError[k];
@@ -256,12 +296,12 @@ int main(int argc, char **argv){
  
     //delete outFile;
 	EventA<<"(AvgE,AvgPx,AvgPy,AvgPz) = ("<<SumE/Events[k]<<","<< SumPx/Events[k]<<","<<SumPy/Events[k]<<","<<SumPz/Events[k]<<")"<<endl;
-	EventR<<"For bin k="<<k<<", total events = "<<Events[k]<<endl; 
+	EventR<<"For bin k="<<k<<",pTHat("<< pTHatMin[k]<<","<<pTHatMax[k] <<")GeV"<<"\t total events = "<<Events[k]<<endl; 
     } //k-loop ends here (pTHatBin loop)
     
     delete HistTempSingleHadron;
- 
-    
+    delete HistTempSingleHadronPositive, HistTempSingleHadronNegative;
+       
     //Full spectrum Below
     //pTHat cross section vs pTHatBin
     double pTHatError[NpTHardBin], pTHatAvg[NpTHardBin];
@@ -317,11 +357,11 @@ int main(int argc, char **argv){
     GESingleHadronTotal->SetName("TotalDifferentialSingleHadronYield");
     GESingleHadronTotal->Write();
     foutput.close();
-
+    
     delete GESingleHadron;
     delete GESingleHadronTotal;
     delete GHardCrossSection;
-    
+        
     //Done. Script run time
     int EndTime = time(NULL);
     int Hour = (EndTime-StartTime)/3600;
@@ -331,5 +371,7 @@ int main(int argc, char **argv){
     EventR<<"Programme run time = "<<Hour<<"::"<<Minute<<"::"<<Second<<endl;
     EventA.close();
     EventR.close();
+    outFile->Close();
+        
     return 0;
 }
