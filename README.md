@@ -1,5 +1,5 @@
-# Code to simulation and analysis of Heavy-Ion collisions
-# it also contain scripts to simulate plasma at HighTemperature on 4D lattices
+## Code to perform simulation and analysis of Heavy-Ion collisions
+## it also contain scripts to simulate plasma at HighTemperature on 4D lattices
 
 (*) AnalysisHadronJets
     Scripts to construct charged-hadron spectrum, inclusive jets spectrum, flow coefficient v2 from data produced in nucleus-nucleus collision and its reference proton-proton collision
