@@ -2,7 +2,7 @@
 
 The code to analyze Jet Observerbles for MC calculations. 
 
-## Installation
+### Installation
 cern ROOT, FastJet and FastJet Contrib are requreid. 
 
 ### ROOT
@@ -77,7 +77,7 @@ $ conda create -c conda-forge --name [YOUR_CONDA_ENVIRONMENT_FOR_ROOT] root
     ```
 
 
-## Build the code
+### Build the code
 
 If you use ROOT of anaconda, you first need to activate the conda environment for ROOT.
 ```
@@ -93,7 +93,7 @@ $ cmake ..
 $ make -j
 ```
 
-## Run the code
+### Run the code
 
 1. Test Run
     ```
@@ -107,4 +107,4 @@ $ make -j
     $ ./Main [PATH_FOR_XML_FILE] [DIRECTORY_OF_INPUT_DATA] [DIRECTORY_OUTPUT]
     ```
     
-Contributions from Yasuki Tachibana and AmitKumar 
+Contributions from Yasuki Tachibana and Amit Kumar 
