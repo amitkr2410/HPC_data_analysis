@@ -1,6 +1,6 @@
-### From Yasuki Tachibana, AmitKumar
 
-The code to analyze Jet Observerbles for MC calculations
+
+The code to analyze Jet Observerbles for MC calculations. 
 
 ## Installation
 cern ROOT, FastJet and FastJet Contrib are requreid. 
@@ -106,3 +106,5 @@ $ make -j
     ```
     $ ./Main [PATH_FOR_XML_FILE] [DIRECTORY_OF_INPUT_DATA] [DIRECTORY_OUTPUT]
     ```
+    
+Contributions from Yasuki Tachibana and AmitKumar 
