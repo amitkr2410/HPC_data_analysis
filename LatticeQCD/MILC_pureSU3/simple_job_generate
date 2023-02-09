@@ -1,0 +1,37 @@
+#!/bin/bash
+
+Nt=$1
+Ns=$2
+BetaIndex=$3
+Select=$4
+
+File=( 
+inputNt6_Ns24_Beta5.6000.txt
+inputNt6_Ns24_Beta5.8500.txt
+inputNt6_Ns24_Beta5.9000.txt
+inputNt6_Ns24_Beta6.0000.txt
+inputNt6_Ns24_Beta6.1000.txt
+inputNt6_Ns24_Beta6.2500.txt
+inputNt6_Ns24_Beta6.4500.txt
+inputNt6_Ns24_Beta6.6000.txt
+inputNt6_Ns24_Beta6.7500.txt
+inputNt6_Ns24_Beta6.8500.txt
+ )
+
+MyDIR=/wsu/home/fy/fy41/fy4125/Measurement/PureGaugeCloverTraceless/AmitPureGauge
+
+echo "This is Beta = ("  ${File[${BetaIndex}]} 
+
+INPUT=${MyDIR}/Nt${Nt}Input/${File[${BetaIndex}]}
+echo "Input file used is at "  ${INPUT}
+TimeOutput=${MyDIR}/OutputNt${Nt}/TimeFor${File[${BetaIndex}]}
+cd ${MyDIR}
+
+echo "${INPUT}" >> ${TimeOutput}
+echo "JOB INFO: Queue=" $PBS_O_QUEUE ",  NodeName="$HOSTNAME   ",  JobName="$PBS_JOBNAME  ",  JobID="$PBS_JOBID >> ${TimeOutput}
+echo "mpirun -np ${Select} ./su3_ora  ${INPUT}" >> ${TimeOutput}
+echo $(date) >> ${TimeOutput}
+
+mpirun -np ${Select} ./su3_ora  ${File[${BetaIndex}]}  
+
+echo $(date) >>  ${TimeOutput}

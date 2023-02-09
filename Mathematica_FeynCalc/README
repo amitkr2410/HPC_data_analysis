@@ -1,0 +1,8 @@
+Include follwoing thing
+
+<< /home/amit/.Mathematica/Applications/FeynCalc/FeynCalc.m
+
+
+and run using following command
+
+math -run <  filename.m
