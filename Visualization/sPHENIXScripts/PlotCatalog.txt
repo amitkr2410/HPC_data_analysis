@@ -1,0 +1,27 @@
+All is at \sqrt{s}=200GeV, 0-10%
+
+(1) Figure-1: z_g
+      R=0.2, R=0.4 and 10GeV< pT jet <30GeV
+
+(2) Figure-2: z_g
+      R=0.2, R=0.4 and 30GeV< pT jet <50GeV
+
+(3) Figure-3: \theta_{g}
+      R=0.2, R=0.4 and 10GeV< pT jet <30GeV
+
+(4) Figure-4: \theta_{g}
+      R=0.2, R=0.4 and 30GeV< pT jet <50GeV
+
+(5) Figure-5: groomed m_{g}
+      R=0.2, R=0.4 and 10GeV< pT jet <30GeV
+
+(6) Figure-6: groomed m_{g}
+      R=0.2, R=0.4 and 30GeV< pT jet <50GeV
+
+(7) Figure-7: Dz(pT)
+       R=0.4 and 10GeV< pT jet <30GeV
+       R=0.4 and 30GeV< pT jet <50GeV
+
+
+(11) Inclusive jets RAA: 
+(12) Charged jets RAA : 

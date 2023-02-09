@@ -1,0 +1,89 @@
+Figure
+pp alone:Jet: 1-20
+
+(Figure-1): Spectrum of inclusive jet cross section at 5.02TeV (ATLAS:R=0.4, |y|<0.3, |y|<2.8) and (ALICE:R=0.4, |eta|<0.3)
+
+(Figure-2): Ratio plot of differential jet cross section (Ratio w.r.t. PYTHIA at 5.02TeV), ATLAS (R=0.4,|y|<0.3)
+
+(Figure-3): Ratio plot of differential jet cross section (Ratio w.r.t. PYTHIA) at 5.02TeV for ALICE (R=0.4, |y|<0.3)
+---PYTHIA ALICE needed
+
+(Figure-4): Ratio plot of differential jet cross section (Ratio w.r.t. PYTHIA) at 2.76TeV CMS R=0.4, |eta|<2.0
+(Figure-4b): Same as Figure-4 except add colored hadronization result
+
+(Figure-5): Ratio plot of charged-hadron yield (Ratio w.r.t PYTHIA) at 2.76TeV , |eta|<1.0
+
+(Figure-6): Ratio plot of Charged-pion yield (Ratio w.r.t PYTHIA) for PHENIX (|y|<0.35, @200GeV), pT-hat bin below 4GeV are not included 
+
+(Figure-7): Ratio plot of partonic jet cross section vs hadronic jet cross section, ATLAS
+(Figure-8-Absurd): Ratio plot of partonic jet cross section vs hadronic jet cross section, ALICE
+(Figure-9):  Ratio Plot of inclusive jet cross section (Ratio w.r.t PYTHIA) at 200GeV for STAR  (R=0.6, |eta|<0.5)
+(Figure-10): Ratio Plot of inclusive jet cross section (Ratio w.r.t PYTHIA) at 200GeV for STAR (R=0.6, |eta|<1.0)
+(Figure-10b): Same as Figure-10, except add colored hadronization results.
+
+(Figure-11): Ratio plot of partonic jet cross section vs hadronic jets, STAR, R=0.4, |eta_{jet}<0.5|
+(Figure-12): Ratio plot	of partonic jet	cross section vs hadronic jets,	STAR, R=0.4, |eta_{jet}<1.0|
+
+pp alone: single-hadron:20-40
+
+
+5.02 TeV JetRAA plots: ATLAS:100-120
+(Figure-100): Q^2 dependent q-hat, Fixed alphas=0.3, Q0=1,2,3GeV
+(Figure-101): Q^2 dependent q-hat, Qsw=2GeV, Fixed alphas=0.25, 0.3, 0.35
+(Figure-102): Different q-hat: Q^2 dependent with alphas=0.3, Running coupling with alphas=0.25, fixed coupling alphas=0.25
+(Figure-103): Tc=150MeV, 160MeV, 170MeV for Q^2 dependent q-hat
+(Figure-104): \tau0=0.3, 0.6, 0.9 fm/c, for Q^2 dependent q-hat
+(Figure-105): Hadronic vs Partonic jet RAA for Q^2 dependent q-hat, Running Coupling and Fixed coupling alphas
+(Figure-106): 3D-medium vs 2D medium, for Q^2 dependent q-hat
+(Figure-107): Jet RAA for Liq. Ecut=3.2T, Broadening Ecut=8T; alpha_s=0.35, other parameters are same.
+(Figure-108): Jet RAA for Liq. Ecut=3.2T, Broadening Ecut=10T; alpha_s=0.3, other parameters are same.
+
+
+(Figure-110): with hole subtraction and without  0-10%, 5.02TeV
+(Figure-111): with hole subtraction and without 10-20%, 5.02TeV
+(Figure-112): with hole subtraction and without 20-30%, 5.02TeV
+(Figure-113): with hole subtraction and without 30-40%, 5.02TeV
+(Figure-114): with hole subtraction and without 40-50%, 5.02TeV
+(Figure-115): with hole subtraction and without 50-60%, 5.02TeV
+
+
+5.02 TeV Jet RAA plots: ALICE:200-220
+             R=0.4, |eta_jet|<0.3, p^{lead}_{T} > 7 GeV, 0-10%
+(Figure-200): Q^2 dependent q-hat, Fixed alphas=0.3, Q0=1,2,3GeV
+(Figure-201): Q^2 dependent q-hat, Qsw=2GeV, Fixed alphas=0.25, 0.3, 0.35
+(Figure-202): Different q-hat: Q^2 dependent with alphas=0.3, Running coupling with alphas=0.25, fixed coupling	alphas=0.25
+(Figure-203): Tc=150MeV, 160MeV, 170MeV for Q^2 dependent q-hat
+(Figure-204): \tau0=0.3, 0.6, 0.9 fm/c, for Q^2 dependent q-hat
+(Figure-205): Hadronic vs Partonic jet RAA for Q^2 dependent q-hat
+(Figure-206): 3D-medium vs 2D medium, for Q^2 dependent q-hat
+(Figure-207): Jet RAA for Liq. Ecut=3.2T, Broadening Ecut=8T; alpha_s=0.35, other parameters are same.
+
+5.02 TeV Hadron RAA plots: CMS: 300-320
+(Figure-300): Q^2 dependent q-hat, Fixed alphas=0.3, Q0=1,2,3GeV
+(Figure-301): Q^2 dependent q-hat, Qsw=2GeV, Fixed alphas=0.25, 0.3, 0.35
+(Figure-302): Different q-hat: Q^2 dependent with alphas=0.3, Running coupling with alphas=0.25, fixed coupling alphas=0.25
+(Figure-303): Tc=150MeV, 160MeV, 170MeV for Q^2 dependent q-hat
+(Figure-304): \tau0=0.3, 0.6, 0.9 fm/c, for Q^2 dependent q-hat
+(Figure-305): Liquifier run vs default run,
+(Figure-307): Hadron RAA for Liq. Ecut=3.2T, Broadening Ecut=8T; alpha_s=0.35, other parameters are same.
+
+2.76TeV Jet RAA: CMS (0-5%): 151-160
+(Figure151): Inclusive jet RAA,R=0.4, |eta_jet|<2.0
+2.76TeV hadron RAA: CMS(0-5%) 351-360
+(Figure-351): Charged-particle RAA, |eta|<1.0
+
+
+200GeV charged-jet RAA, STAR,0-10%: Figure 161-165
+(Figure-161): Jet RAA Star compared to JETSCAPE, R=0.2, |eta_jet|<0.8, p^{lead,ch}_{T} > 5GeV
+(Figure-162): Jet RAA Star compared to JETSCAPE, R=0.3, |eta_jet|<0.7, p^{lead,ch}_{T} > 5GeV
+(Figure-163): Jet RAA Star compared to JETSCAPE, R=0.4, |eta_jet|<0.6, p^{lead,ch}_{T} > 5GeV
+
+200GeV Prediction inclusive-jet RAA, STAR,0-10%: Figure 166-170
+(Figure-166): Inclusive jet RAA, R=0.4, |eta_jet|<0.5, 0-10%
+(Figure-167): Inclusive jet RAA, R=0.4, |eta_jet|<1.0, 0-10%
+(Figure-168): Inclusive jet RAA, R=0.4, |eta_jet|<0.5, 0-10%, Ecut partonic RAA Liquefier
+(Figure-169): Inclusive jet RAA, R=0.4, |eta_jet|<1.0, 0-10%, Ecut partonic RAA Liequefier
+
+200GeV charge-pion RAA: PHENIX: 361-370
+(Figure-361): Charged-pion RAA PHENIX to JETSCAPE, 0-10%, |y|<0.35; 
+
