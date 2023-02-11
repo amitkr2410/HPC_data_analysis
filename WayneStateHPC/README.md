@@ -6,7 +6,7 @@
         Open and edit "run_jetscape.py"
         
 ### (2) Set appropriate flags in the reference input XML file:
-        Open and edit "jetscape_user_pbpb_grid"
+        Open and edit "jetscape_user_pbpb_grid.xml"
 
 ### (3) Download JETSCAPE code package from git-hub and compile the software:
         git clone -b main https://github.com/JETSCAPE/JETSCAPE.git
