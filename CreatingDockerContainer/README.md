@@ -6,7 +6,9 @@
 
 ### To build run this in terminal, make sure Dockerfile is in the same directory
 ### The dockerfile will build the image with the following packages: matplotlib, numpy, pandas, scikit-learn and emacs
-docker build .
+```
+ docker build .
+```
 
 ### To check all the docker images in local
 ```
@@ -39,4 +41,6 @@ docker build .
 ```
 
 ### To list running docker-images
+```
  docker ps -a
+```
