@@ -9,22 +9,34 @@
 docker build .
 
 ### To check all the docker images in local
+```
  docker images
+```
 
 ### to build docker by specifying the name of the image
- docker build -t Matrix .
+```
+ docker build -t Matrix . 
+```
 
 ### To run the docker image
+```
  docker run -d -p 80:80 ImageID
+```
 
 ### To run the docker image in terminal mode or 
+```
  docker exec -it  ImageID /bin/sh
+```
  
 ### To launch
+```
  docker run -it -v ~/Research/DockerContainer:/home/amit-docker --name myMatrix matrix
+```
 
 ### To stop the docker image
+```
  docker stop container-name
+```
 
 ### To list running docker-images
  docker ps -a
