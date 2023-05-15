@@ -1,7 +1,9 @@
 ### List of base images to build docker on top
+```
  (1) FROM python:3.6-stretch
  (2) FROM nginx:1.23.1-alpine  #For hosting webpages
- 
+```
+
 ### To build run this in terminal, make sure Dockerfile is in the same directory
 ### The dockerfile will build the image with the following packages: matplotlib, numpy, pandas, scikit-learn and emacs
 docker build .
