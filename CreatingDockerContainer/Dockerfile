@@ -4,7 +4,7 @@ FROM python:3.6-stretch
 
 # Install pre-reqs (commented ones are already in base image)
 
-RUN apt-get update && apt-get install -y emacs
+#RUN apt-get update && apt-get install -y emacs
 
 #Install additional useful python packages
 
