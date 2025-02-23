@@ -16,7 +16,7 @@
   </Random>
   <!-- Inital State Module  -->
   <IS>
-    <initial_profile_path>/project/rrg-jeon-ac/amitkr/HydroProfiles/200GeV0-10</initial_profile_path>
+    <initial_profile_path>/rs/rs_grp_majshen/tier1/JETSCAPEDataFile/HydroProfiles/200GeV_0-10</initial_profile_path>
   </IS>
   
   <!-- Hard Process -->
@@ -26,7 +26,6 @@
       <pTHatMin>20</pTHatMin>
       <pTHatMax>25</pTHatMax>
       <eCM>200</eCM>
-      <useHybridHad>0</useHybridHad>
     </PythiaGun>
   </Hard>
   
@@ -40,7 +39,7 @@
     <hydro_from_file>
       <name>Hydro from file </name>
       <read_in_multiple_hydro>1</read_in_multiple_hydro>
-      <hydro_files_folder>/project/rrg-jeon-ac/amitkr/HydroProfiles/200GeV0-10</hydro_files_folder>
+      <hydro_files_folder>/rs/rs_grp_majshen/tier1/JETSCAPEDataFile/HydroProfiles/200GeV_0-10</hydro_files_folder>
     </hydro_from_file>
   </Hydro>
   
@@ -55,7 +54,6 @@
 
     <Matter>
       <name>Matter</name>
-      <useHybridHad>0</useHybridHad>
       <matter_on> 1 </matter_on>
       <Q0> 2.0 </Q0>
       <T0> 0.16 </T0>

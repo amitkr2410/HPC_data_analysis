@@ -1,15 +1,19 @@
 #!/usr/bin/env python
 import os
 def Main():
-    JETSCAPEDIR="/wsu/tmp/AmitAAPaper/JETSCAPE"
-    TestOutDIR="/wsu/tmp/AmitAAPaper/RawFile"
-    FinalOutputDIR="/wsu/tmp/AmitAAPaper/FinalData" 
-    CodeDIR="/wsu/tmp/AmitAAPaper"
+    #Edit directory address "/wsu/tmp/AmitAAPaper/HPC_data_analysis/WayneStateHPC" to your address
+    JETSCAPEDIR="/wsu/tmp/AmitAAPaper/HPC_data_analysis/WayneStateHPC/JETSCAPE"
+    TestOutDIR="/wsu/tmp/AmitAAPaper/HPC_data_analysis/WayneStateHPC/RawFile"
+    FinalOutputDIR="/wsu/tmp/AmitAAPaper/HPC_data_analysis/WayneStateHPC/FinalData" 
+    CodeDIR="/wsu/tmp/AmitAAPaper/HPC_data_analysis/WayneStateHPC"
     Exec=CodeDIR +"/RUN.sh"
-    UserXML="/wsu/tmp/AmitAAPaper/jetscape_user_pbpb_grid.xml"
-    
-    for i in range(0,23):
-        for run in range(0,20):        
+    UserXML="/wsu/tmp/AmitAAPaper/HPC_data_analysis/WayneStateHPC/jetscape_user_pbpb_grid.xml"
+    #Number of pthat-bins is 23
+    #Number of subruns for each pthat-bins are 10
+    NumberOfpTHatBins=23
+    NumberOfSubRun=10
+    for i in range(0,NumberOfpTHatBins):
+        for run in range(0,NumberOfSubRun):        
             Bin = ptHardBins(i)    
             print(Bin[0]," ", Bin[1])
             LastName="Bin"+	str(Bin[0])+"_"+str(Bin[1])+ "_Run" + str(run)
