@@ -1,0 +1,7 @@
+(1) Run1_PP_5020GeV
+    Q^2 = pT^2/4
+    tMax = 250fm/c
+
+(2) Run2_PP_5020GeV
+    Q^2	= pT^2/4
+    tMax = 500fm/c
