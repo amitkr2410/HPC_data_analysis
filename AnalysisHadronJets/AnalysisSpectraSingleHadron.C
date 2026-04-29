@@ -36,8 +36,8 @@
 #include <memory>
 #include <chrono>
 #include <thread>
-#include "/wsu/home/fy/fy41/fy4125/Software/pythia8230/include/Pythia8/Pythia.h"
-#include "/wsu/home/fy/fy41/fy4125/Software/pythia8230/include/Pythia8/FJcore.h"
+#include "/nfs/zfs2/Software/pythia8309/include/Pythia8/Pythia.h"
+//#include "/nfs/zfs2/Software/pythia8309/include/Pythia8/FJcore.h"
 
 //ROOT headers
 #include "TString.h"
@@ -52,7 +52,7 @@
 #include "TROOT.h"
 using namespace std;
 using namespace Pythia8;
-using namespace fjcore;
+//using namespace fjcore;
 int main(int argc, char **argv){
   double PI=3.1415926;
     int StartTime = time(NULL);    
@@ -67,17 +67,17 @@ int main(int argc, char **argv){
     int NpTHardBin;
     //[1]InputDataFileDIR, [2]OutputDataFileName,  [3]=CMS or ATLAS or ALICE or STAR, [4]= 200, 2760 or 5020, 7000, [5]SingleHadronEtaCut,          [6]EtaCutFlag, [7]=ChargedFlag=0 or 1 (all or charged), [8]=Jetscape or Pythia, [9] Hadron or Parton [10] BGS
     char InputDataFileDIR[100000], OutputDataFileName[100000], JetscapeORPythia[100], HadronORParton[100];
-    sprintf(InputDataFileDIR,"%s",argv[1]);
-    sprintf(OutputDataFileName,"%s",argv[2]);
-    sprintf(JetscapeORPythia,"%s",argv[8]);
-    sprintf(HadronORParton,"%s",argv[9]);
+    sprintf(InputDataFileDIR,"%s","/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData");//argv[1]);
+    sprintf(OutputDataFileName,"%s","Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500");//argv[2]);
+    sprintf(JetscapeORPythia,"%s","Jetscape");//argv[8]);
+    sprintf(HadronORParton,"%s","Hadron");//argv[9]);
 
-    string ExpName=std::string(argv[3]);
-    int Ecm = atoi(argv[4]);
-    double SingleHadronEtaCut=atof(argv[5])/1.0;
-    int EtaCutFlag =atoi(argv[6]); //0 or 1; 0 to use rapididty cut, 1 to use eta cut
-    int ChargedFlag = atoi(argv[7]); // 0 or 1; 0 means all particle, 1 means only charged
-    int BGS=atoi(argv[10]);
+    string ExpName="CMS";//std::string(argv[3]);
+    int Ecm = 5020;//atoi(argv[4]);
+    double SingleHadronEtaCut=1.0;//atof(argv[5])/1.0;
+    int EtaCutFlag =1;//atoi(argv[6]); //0 or 1; 0 to use rapididty cut, 1 to use eta cut
+    int ChargedFlag = 1;//atoi(argv[7]); // 0 or 1; 0 means all particle, 1 means only charged
+    int BGS=-1;//atoi(argv[10]); //-1 pp, 0 pp, 1 PbPb
     
     if(  Ecm == 200 )
       {
@@ -107,8 +107,6 @@ int main(int argc, char **argv){
 
 
     int NumberOfFiles=1;
-    int Events[NpTHardBin];
-    double HardCrossSection[NpTHardBin], HardCrossSectionError[NpTHardBin];
     double *SingleHadronpTBin;
     int NpTSingleHadronBin;    
     //Variable for single hadron spectrum
@@ -125,12 +123,29 @@ int main(int argc, char **argv){
 	  }
       }
 
-    double dNdpTCountSingleHadron[NpTHardBin][NpTSingleHadronBin];  //[ptHatBin] [Regular pt]
-    double pTHardBinSingleHadronBinError[NpTHardBin][NpTSingleHadronBin];
-    double TotalDifferentialSingleHadronYield[NpTSingleHadronBin];
-    double TotalDifferentialSingleHadronYieldError[NpTSingleHadronBin];
+    //int Events[NpTHardBin];
+    //double HardCrossSection[NpTHardBin], HardCrossSectionError[NpTHardBin];
+    // double dNdpTCountSingleHadron[NpTHardBin][NpTSingleHadronBin];  //[ptHatBin] [Regular pt]
+    // double pTHardBinSingleHadronBinError[NpTHardBin][NpTSingleHadronBin];
+    //double TotalDifferentialSingleHadronYield[NpTSingleHadronBin];
+    //double TotalDifferentialSingleHadronYieldError[NpTSingleHadronBin];
     double InelasticCS = 70.0;//CMS 5.02TeV (70mb)
 
+    int *Events; double *HardCrossSection, *HardCrossSectionError; //NpTHardBin
+    double **dNdpTCountSingleHadron = new double*[NpTHardBin]; //[NpTHardBin][NpTSingleHadronBin]
+    double **pTHardBinSingleHadronBinError = new double*[NpTHardBin];//[NpTHardBin][NpTSingleHadronBin]
+    double *TotalDifferentialSingleHadronYield, *TotalDifferentialSingleHadronYieldError;//NpTSingleHadronBin
+
+    Events = new int[NpTHardBin];
+    HardCrossSection = new double[NpTHardBin];
+    HardCrossSectionError = new double[NpTHardBin];
+    for (int i = 0; i < NpTHardBin; i++)
+      {
+	dNdpTCountSingleHadron[i] = new double[NpTSingleHadronBin];
+	pTHardBinSingleHadronBinError[i] = new double[NpTSingleHadronBin];
+      }
+    TotalDifferentialSingleHadronYield = new double[NpTSingleHadronBin];
+    TotalDifferentialSingleHadronYieldError = new double[NpTSingleHadronBin];
 
     // Histograms.1. Number of jets vs pT of the jet. 2. Number of charged hadron vs pT of the hadron
     TH1D *HistTempSingleHadron = new TH1D("SingleHadronSpectrumBin", "Single Hadron Spectrum pT", NpTSingleHadronBin, SingleHadronpTBin); //CountVspT for single-hadron
@@ -138,14 +153,14 @@ int main(int argc, char **argv){
     TH1D *HistTempSingleHadronNegative = new TH1D("SingleHadronSpectrumNegative", "Single Hadron Spectrum pT", NpTSingleHadronBin, SingleHadronpTBin);
 
     ofstream EventR, EventA, foutput; char VarFileName[100000];
-    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/EventRecord%s.txt",OutputDataFileName);
+    sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/Files/EventRecord%s.txt",OutputDataFileName);
     EventR.open(VarFileName,ios::out);
-    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/CodeCheck%s.txt",OutputDataFileName);
+    sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/Files/CodeCheck%s.txt",OutputDataFileName);
     EventA.open(VarFileName,ios::out);
-    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/%s.root",OutputDataFileName); // name of the output root file  
+    sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/Files/%s.root",OutputDataFileName); // name of the output root file  
     TFile* outFile = new TFile( VarFileName, "RECREATE");
 
-    sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/Files/%s.txt",OutputDataFileName);
+    sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/Files/%s.txt",OutputDataFileName);
     foutput.open(VarFileName,ios::out);
     cout<<"Final result will be store in  File="<<VarFileName<<endl;
     std::vector <int> chargeList;    
@@ -196,15 +211,15 @@ int main(int argc, char **argv){
 	    ifstream myfile;  myfile.open(HadronFile,ios::in);
 	    ifstream myfile2; myfile2.open(HardCrossSectionFile,ios::in);
 	    //myfile >>EventLabel>> EventLabel>> EventLabel>> EventLabel>> EventLabel>> EventLabel>> EventLabel;
-	    while (myfile >>EventLabel )
+	    while (myfile >>EventLabel  )
 	      {
 		
 		if(MyString.compare(EventLabel)!=0)
 		  { //myfile >> PID >> pStat >> E >> Px >> Py >> Pz ;
 		    myfile >> PID >> pStat >> E >> Px >> Py >> Pz >> Eta >> Phi;
-		    cout<<" "<<PID<<" "<< pStat<< " " << E <<" "<< Px<<" " << Py<<" " << Pz<<" " << Eta<<" " << Phi<<endl;                 
+		    //cout<<" "<<PID<<" "<< pStat<< " " << E <<" "<< Px<<" " << Py<<" " << Pz<<" " << Eta<<" " << Phi<<endl;                 
 		    double PT = TMath::Sqrt( pow(Px ,2.0) + pow(Py , 2.0) );double ModP = sqrt(Px*Px + Py*Py + Pz*Pz);
-		    double Phi2 = atan2(Py,Px);double Eta = 0.5*log((ModP+Pz)/(ModP-Pz));
+		    double Phi2 = atan2(Py,Px); Eta = 0.5*log((ModP+Pz)/(ModP-Pz));
 		    double Rapidity= 0.5*log((E+Pz)/(E-Pz));
 		    
 		    if(EtaCutFlag==0){Eta = Rapidity;}
@@ -234,11 +249,11 @@ int main(int argc, char **argv){
 		  }
 		
 		if(MyString.compare(EventLabel)==0)
-		  {
-		    for(int i=0;i<8;i++) { myfile >> EventLabel;cout<<EventLabel<<" ";}
-		    //for(int i=0;i<1;i++){myfile >> EventLabel;cout<<EventLabel<<" ";}
+		  { //cout<<EventLabel<<" ";
+		    for(int i=0;i<8;i++) { myfile >> EventLabel;//cout<<EventLabel<<" ";
+		    }
 		    Events[k]++; EventsPerFile++;
-		    cout<<"\n"<<HadronFile<<endl;
+		    //cout<<"\n"<<HadronFile<<endl;
 		  }
 	      }
 	    EventA<<"File k="<<k<<",i="<<FileIndex<<" has total events="<<EventsPerFile<<endl;
@@ -306,7 +321,10 @@ int main(int argc, char **argv){
        
     //Full spectrum Below
     //pTHat cross section vs pTHatBin
-    double pTHatError[NpTHardBin], pTHatAvg[NpTHardBin];
+    //double pTHatError[NpTHardBin], pTHatAvg[NpTHardBin];
+    double *pTHatError = new double[NpTHardBin];
+    double *pTHatAvg   = new double[NpTHardBin];
+    
     for(int k=0; k<NpTHardBin; k++)
       {
         pTHatError[k]=0.0;
@@ -317,8 +335,13 @@ int main(int argc, char **argv){
     GHardCrossSection->Write();
 
     //For single hadron spectrum
-    double DifferentialSingleHadronYield[NpTSingleHadronBin],DifferentialSingleHadronYieldError[NpTSingleHadronBin],SingleHadronpT[NpTSingleHadronBin],SingleHadronpTError[NpTSingleHadronBin];
+    //double DifferentialSingleHadronYield[NpTSingleHadronBin],DifferentialSingleHadronYieldError[NpTSingleHadronBin],SingleHadronpT[NpTSingleHadronBin],SingleHadronpTError[NpTSingleHadronBin];
     TGraphErrors * GESingleHadron;
+    double *DifferentialSingleHadronYield = new double[NpTSingleHadronBin];
+    double *DifferentialSingleHadronYieldError = new double[NpTSingleHadronBin];
+    double *SingleHadronpT = new double[NpTSingleHadronBin];
+    double *SingleHadronpTError = new double[NpTSingleHadronBin];
+    
     for(int j=0; j<NpTSingleHadronBin;j++)
       {
         TotalDifferentialSingleHadronYield[j] = 0.0;
@@ -363,7 +386,21 @@ int main(int argc, char **argv){
     delete GESingleHadron;
     delete GESingleHadronTotal;
     delete GHardCrossSection;
-        
+
+    delete[] Events; delete[] HardCrossSection,	delete[] HardCrossSectionError;
+    for (int i = 0; i < NpTHardBin; i++)
+      {
+        delete[] dNdpTCountSingleHadron[i];
+    	delete[] pTHardBinSingleHadronBinError[i];
+      }
+    delete[] dNdpTCountSingleHadron; delete[] pTHardBinSingleHadronBinError;
+    delete[] TotalDifferentialSingleHadronYield; delete[] TotalDifferentialSingleHadronYieldError;
+
+    delete[] pTHatError; delete[] pTHatAvg;
+    
+    delete[] DifferentialSingleHadronYield;    delete[] DifferentialSingleHadronYieldError;
+    delete[] SingleHadronpT; delete[] SingleHadronpTError;
+    delete[] pTHatMin; delete[] pTHatMax; delete[] SingleHadronpTBin;
     //Done. Script run time
     int EndTime = time(NULL);
     int Hour = (EndTime-StartTime)/3600;

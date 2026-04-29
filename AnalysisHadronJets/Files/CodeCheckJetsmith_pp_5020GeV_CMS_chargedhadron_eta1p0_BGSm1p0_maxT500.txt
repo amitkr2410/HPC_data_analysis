@@ -1,0 +1,59 @@
+OutputFile Name is /nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/Files/Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500.txt
+Current pTHatBin is 0 (1,2) GeV
+Current Bin is 0 pTHatBin(1,2) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin1_2.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin1_2.out
+File k=0,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (2.49255,0.00122922,0.00247787,0.00318486)
+Current pTHatBin is 1 (2,3) GeV
+Current Bin is 1 pTHatBin(2,3) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin2_3.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin2_3.out
+File k=1,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (3.50868,-0.001535,-0.00192101,-0.000455735)
+Current pTHatBin is 2 (3,4) GeV
+Current Bin is 2 pTHatBin(3,4) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin3_4.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin3_4.out
+File k=2,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (6.14177,-0.0072222,0.00335185,0.00156701)
+Current pTHatBin is 3 (4,5) GeV
+Current Bin is 3 pTHatBin(4,5) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin4_5.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin4_5.out
+File k=3,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (9.59396,-0.00811561,0.00753612,0.00402258)
+Current pTHatBin is 4 (5,7) GeV
+Current Bin is 4 pTHatBin(5,7) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin5_7.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin5_7.out
+File k=4,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (13.5292,0.0177465,-0.00738514,-0.00462616)
+Current pTHatBin is 5 (7,9) GeV
+Current Bin is 5 pTHatBin(7,9) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin7_9.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin7_9.out
+File k=5,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (17.7755,0.0331194,0.00256569,0.00157123)
+Current pTHatBin is 6 (9,11) GeV
+Current Bin is 6 pTHatBin(9,11) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin9_11.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin9_11.out
+File k=6,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (20.9733,-0.00957696,-0.00721586,0.0090347)
+Current pTHatBin is 7 (11,13) GeV
+Current Bin is 7 pTHatBin(11,13) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin11_13.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin11_13.out
+File k=7,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (23.6179,0.00363269,-0.0429647,0.0311422)
+Current pTHatBin is 8 (13,15) GeV
+Current Bin is 8 pTHatBin(13,15) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin13_15.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin13_15.out
+File k=8,i=0 has total events=100000
+(AvgE,AvgPx,AvgPy,AvgPz) = (25.917,0.0224958,0.0251504,0.0298395)
+Current pTHatBin is 9 (15,17) GeV
+Current Bin is 9 pTHatBin(15,17) GeV and file is 0
+Hadron File =/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/JetscapeHadronListBin15_17.out
+HardCrossSectionFile=/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData/SigmaHardBin15_17.out

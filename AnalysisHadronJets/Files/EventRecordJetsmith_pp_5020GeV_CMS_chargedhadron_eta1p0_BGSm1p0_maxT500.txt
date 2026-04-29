@@ -1,0 +1,9 @@
+For bin k=0,pTHat(1,2)GeV	 total events = 100000
+For bin k=1,pTHat(2,3)GeV	 total events = 100000
+For bin k=2,pTHat(3,4)GeV	 total events = 100000
+For bin k=3,pTHat(4,5)GeV	 total events = 100000
+For bin k=4,pTHat(5,7)GeV	 total events = 100000
+For bin k=5,pTHat(7,9)GeV	 total events = 100000
+For bin k=6,pTHat(9,11)GeV	 total events = 100000
+For bin k=7,pTHat(11,13)GeV	 total events = 100000
+For bin k=8,pTHat(13,15)GeV	 total events = 100000
