@@ -67,8 +67,8 @@ int main(int argc, char **argv){
     int NpTHardBin;
     //[1]InputDataFileDIR, [2]OutputDataFileName,  [3]=CMS or ATLAS or ALICE or STAR, [4]= 200, 2760 or 5020, 7000, [5]SingleHadronEtaCut,          [6]EtaCutFlag, [7]=ChargedFlag=0 or 1 (all or charged), [8]=Jetscape or Pythia, [9] Hadron or Parton [10] BGS
     char InputDataFileDIR[100000], OutputDataFileName[100000], JetscapeORPythia[100], HadronORParton[100];
-    sprintf(InputDataFileDIR,"%s","/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData");//argv[1]);
-    sprintf(OutputDataFileName,"%s","Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500");//argv[2]);
+    sprintf(InputDataFileDIR,"%s",argv[1]);//"/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData");//argv[1]);
+    sprintf(OutputDataFileName,"%s",argv[2]);//"Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500_virf_0p00");//argv[2]);
     sprintf(JetscapeORPythia,"%s","Jetscape");//argv[8]);
     sprintf(HadronORParton,"%s","Hadron");//argv[9]);
 

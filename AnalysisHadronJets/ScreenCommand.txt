@@ -1,3 +1,40 @@
 Date: April 29, 2026
 
 screen -S 5020_Hadron_maxT250
+
+Date: May 1, 2026
+
+screen -S 5020_jet_y2p8_maxT250
+
+Date: May 6, 2026
+
+screen -S 5020_SH_RUN3
+./AnalysisSpectraSingleHadron /nfs/zfs2/RawData/RUN3_PP_5020GeV/FinalData  Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500_virf_0p10
+
+screen -S 5020_SH_RUN4
+./AnalysisSpectraSingleHadron /nfs/zfs2/RawData/RUN4_PP_5020GeV/FinalData  Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500_virf_0p50
+
+screen -S 5020_SH_RUN5
+./AnalysisSpectraSingleHadron /nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData  Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500_virf_0p75
+
+screen -S 5020_SH_RUN6
+
+./AnalysisSpectraSingleHadron /nfs/zfs2/RawData/RUN6_PP_5020GeV/FinalData  Jetsmith_pp_5020GeV_CMS_chargedhadron_eta1p0_BGSm1p0_maxT500_virf_1p00
+
+
+
+screen -S 5020_jet_RUN3
+
+./JetpTCrossSectionPartonHadronPbPb /nfs/zfs2/RawData/RUN3_PP_5020GeV/FinalData  JetCrosssection_Jetsmith_pp_5020GeV_Atlas_antikt_R0p4_y0p3_BGSm1_maxT500_virf_0p10
+
+screen -S 5020_jet_RUN4
+
+./JetpTCrossSectionPartonHadronPbPb /nfs/zfs2/RawData/RUN4_PP_5020GeV/FinalData  JetCrosssection_Jetsmith_pp_5020GeV_Atlas_antikt_R0p4_y0p3_BGSm1_maxT500_virf_0p50
+
+screen -S 5020_jet_RUN5
+
+./JetpTCrossSectionPartonHadronPbPb /nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData  JetCrosssection_Jetsmith_pp_5020GeV_Atlas_antikt_R0p4_y0p3_BGSm1_maxT500_virf_0p75
+
+screen -S 5020_jet_RUN6
+
+./JetpTCrossSectionPartonHadronPbPb /nfs/zfs2/RawData/RUN6_PP_5020GeV/FinalData  JetCrosssection_Jetsmith_pp_5020GeV_Atlas_antikt_R0p4_y0p3_BGSm1_maxT500_virf_1p00

@@ -1,10 +1,10 @@
-import os
 
+import os
 
 def move():
 
-    TestOutDIR="/nfs/zfs2/RawData/RunPP_5020GeV/TestOut"
-    FinalOutputDIR="/nfs/zfs2/RawData/RunPP_5020GeV/FinalData"
+    TestOutDIR="/nfs/zfs2/RawData/RUN7_PP_5020GeV/TestOut"
+    FinalOutputDIR="/nfs/zfs2/RawData/RUN7_PP_5020GeV/FinalData"
 
     for i in range(0, 66):
         Bin = ptHardBins(i)

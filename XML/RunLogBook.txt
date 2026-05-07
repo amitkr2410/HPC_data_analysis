@@ -3,5 +3,38 @@
     tMax = 250fm/c
 
 (2) Run2_PP_5020GeV
-    Q^2	= pT^2/4
+    Q^2	= pT^2/4 = pT^2*0.25
+    tMax = 500fm/c
+
+(3) RUN3_PP_5020GeV
+    Q^2 = pT^2*0.10
+    tMax = 500fm/c
+
+(4) RUN4_PP_5020GeV
+    Q^2 = pT^2*0.50
+    tMax = 500fm/c
+
+(5) RUN5_PP_5020GeV
+    Q^2 = pT^2*0.75
+    tMax = 500fm/c
+    
+(6) RUN6_PP_5020GeV
+    Q^2 = pT^2*1.00
+    tMax = 500fm/c
+    
+Date: May 6th, 2026    
+(7) RUN7_PP_5020GeV
+    Q^2 = pT^2*0.30
+    tMax = 500fm/c
+
+(8) RUN8_PP_5020GeV
+    Q^2 = pT^2*0.35
+    tMax = 500fm/c
+
+(9) RUN9_PP_5020GeV
+    Q^2 = pT^2*0.40
+    tMax = 500fm/c
+
+(10) RUN10_PP_5020GeV
+    Q^2 = pT^2*0.45
     tMax = 500fm/c

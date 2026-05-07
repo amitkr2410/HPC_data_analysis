@@ -1,0 +1,265 @@
+OutputFile Name is /nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/JetFiles/JetCrosssection_Jetsmith_pp_5020GeV_Atlas_antikt_R0p4_y0p3_BGSm1_maxT500_virf_0p75.txt
+Current pTHatBin is 0 (1,2) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1_2.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1_2.out
+HardCrossSection=672.255+/-0.409569
+Current pTHatBin is 1 (2,3) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin2_3.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin2_3.out
+HardCrossSection=217.707+/-0.286784
+Current pTHatBin is 2 (3,4) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin3_4.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin3_4.out
+HardCrossSection=64.9353+/-0.0962171
+Current pTHatBin is 3 (4,5) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin4_5.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin4_5.out
+HardCrossSection=24.3353+/-0.0366798
+Current pTHatBin is 4 (5,7) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin5_7.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin5_7.out
+HardCrossSection=16.1983+/-0.0249492
+Current pTHatBin is 5 (7,9) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin7_9.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin7_9.out
+HardCrossSection=4.6539+/-0.00735372
+Current pTHatBin is 6 (9,11) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin9_11.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin9_11.out
+HardCrossSection=1.71445+/-0.00266199
+Current pTHatBin is 7 (11,13) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin11_13.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin11_13.out
+HardCrossSection=0.749889+/-0.00115319
+Current pTHatBin is 8 (13,15) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin13_15.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin13_15.out
+HardCrossSection=0.367862+/-0.00058851
+Current pTHatBin is 9 (15,17) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin15_17.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin15_17.out
+HardCrossSection=0.1981+/-0.000304869
+Current pTHatBin is 10 (17,20) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin17_20.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin17_20.out
+HardCrossSection=0.152007+/-0.000235571
+Current pTHatBin is 11 (20,25) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin20_25.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin20_25.out
+HardCrossSection=0.102188+/-0.000160791
+Current pTHatBin is 12 (25,30) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin25_30.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin25_30.out
+HardCrossSection=0.0377617+/-6.35689e-05
+Current pTHatBin is 13 (30,35) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin30_35.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin30_35.out
+HardCrossSection=0.0162695+/-2.65883e-05
+Current pTHatBin is 14 (35,40) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin35_40.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin35_40.out
+HardCrossSection=0.007888+/-1.26259e-05
+Current pTHatBin is 15 (40,45) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin40_45.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin40_45.out
+HardCrossSection=0.00414138+/-6.75716e-06
+Current pTHatBin is 16 (45,50) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin45_50.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin45_50.out
+HardCrossSection=0.00231651+/-3.83001e-06
+Current pTHatBin is 17 (50,55) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin50_55.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin50_55.out
+HardCrossSection=0.00137154+/-2.29462e-06
+Current pTHatBin is 18 (55,60) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin55_60.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin55_60.out
+HardCrossSection=0.000846964+/-1.30993e-06
+Current pTHatBin is 19 (60,70) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin60_70.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin60_70.out
+HardCrossSection=0.000902288+/-1.5351e-06
+Current pTHatBin is 20 (70,80) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin70_80.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin70_80.out
+HardCrossSection=0.000415907+/-6.80963e-07
+Current pTHatBin is 21 (80,90) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin80_90.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin80_90.out
+HardCrossSection=0.000207341+/-3.10428e-07
+Current pTHatBin is 22 (90,100) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin90_100.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin90_100.out
+HardCrossSection=0.000111299+/-1.66909e-07
+Current pTHatBin is 23 (100,110) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin100_110.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin100_110.out
+HardCrossSection=6.33174e-05+/-1.10237e-07
+Current pTHatBin is 24 (110,120) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin110_120.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin110_120.out
+HardCrossSection=3.76983e-05+/-6.01262e-08
+Current pTHatBin is 25 (120,130) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin120_130.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin120_130.out
+HardCrossSection=2.33084e-05+/-3.43855e-08
+Current pTHatBin is 26 (130,140) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin130_140.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin130_140.out
+HardCrossSection=1.49085e-05+/-2.25319e-08
+Current pTHatBin is 27 (140,150) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin140_150.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin140_150.out
+HardCrossSection=9.73477e-06+/-1.48658e-08
+Current pTHatBin is 28 (150,160) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin150_160.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin150_160.out
+HardCrossSection=6.58075e-06+/-1.00572e-08
+Current pTHatBin is 29 (160,170) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin160_170.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin160_170.out
+HardCrossSection=4.51118e-06+/-6.71155e-09
+Current pTHatBin is 30 (170,180) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin170_180.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin170_180.out
+HardCrossSection=3.165e-06+/-4.79049e-09
+Current pTHatBin is 31 (180,190) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin180_190.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin180_190.out
+HardCrossSection=2.25794e-06+/-3.40086e-09
+Current pTHatBin is 32 (190,200) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin190_200.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin190_200.out
+HardCrossSection=1.63546e-06+/-2.51143e-09
+Current pTHatBin is 33 (200,210) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin200_210.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin200_210.out
+HardCrossSection=1.20194e-06+/-1.70778e-09
+Current pTHatBin is 34 (210,220) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin210_220.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin210_220.out
+HardCrossSection=8.90894e-07+/-1.38428e-09
+Current pTHatBin is 35 (220,230) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin220_230.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin220_230.out
+HardCrossSection=6.69051e-07+/-1.00075e-09
+Current pTHatBin is 36 (230,240) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin230_240.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin230_240.out
+HardCrossSection=5.07974e-07+/-7.45835e-10
+Current pTHatBin is 37 (240,250) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin240_250.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin240_250.out
+HardCrossSection=3.88374e-07+/-5.66612e-10
+Current pTHatBin is 38 (250,260) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin250_260.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin250_260.out
+HardCrossSection=3.00823e-07+/-4.4111e-10
+Current pTHatBin is 39 (260,270) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin260_270.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin260_270.out
+HardCrossSection=2.34151e-07+/-3.30818e-10
+Current pTHatBin is 40 (270,280) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin270_280.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin270_280.out
+HardCrossSection=1.83995e-07+/-2.64819e-10
+Current pTHatBin is 41 (280,290) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin280_290.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin280_290.out
+HardCrossSection=1.45196e-07+/-2.06216e-10
+Current pTHatBin is 42 (290,300) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin290_300.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin290_300.out
+HardCrossSection=1.15515e-07+/-1.62688e-10
+Current pTHatBin is 43 (300,350) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin300_350.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin300_350.out
+HardCrossSection=3.14802e-07+/-4.6834e-10
+Current pTHatBin is 44 (350,400) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin350_400.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin350_400.out
+HardCrossSection=1.15321e-07+/-1.69621e-10
+Current pTHatBin is 45 (400,450) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin400_450.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin400_450.out
+HardCrossSection=4.64116e-08+/-6.77881e-11
+Current pTHatBin is 46 (450,500) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin450_500.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin450_500.out
+HardCrossSection=2.00388e-08+/-2.9291e-11
+Current pTHatBin is 47 (500,550) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin500_550.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin500_550.out
+HardCrossSection=9.10947e-09+/-1.48041e-11
+Current pTHatBin is 48 (550,600) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin550_600.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin550_600.out
+HardCrossSection=4.36214e-09+/-6.39219e-12
+Current pTHatBin is 49 (600,700) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin600_700.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin600_700.out
+HardCrossSection=3.23136e-09+/-4.75385e-12
+Current pTHatBin is 50 (700,800) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin700_800.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin700_800.out
+HardCrossSection=8.57252e-10+/-1.30192e-12
+Current pTHatBin is 51 (800,900) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin800_900.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin800_900.out
+HardCrossSection=2.43359e-10+/-3.68894e-13
+Current pTHatBin is 52 (900,1000) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin900_1000.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin900_1000.out
+HardCrossSection=7.16972e-11+/-1.12158e-13
+Current pTHatBin is 53 (1000,1100) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1000_1100.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1000_1100.out
+HardCrossSection=2.16592e-11+/-3.41477e-14
+Current pTHatBin is 54 (1100,1200) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1100_1200.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1100_1200.out
+HardCrossSection=6.57631e-12+/-1.06364e-14
+Current pTHatBin is 55 (1200,1300) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1200_1300.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1200_1300.out
+HardCrossSection=1.97787e-12+/-3.27015e-15
+Current pTHatBin is 56 (1300,1400) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1300_1400.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1300_1400.out
+HardCrossSection=5.85648e-13+/-9.92727e-16
+Current pTHatBin is 57 (1400,1500) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1400_1500.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1400_1500.out
+HardCrossSection=1.67667e-13+/-2.91502e-16
+Current pTHatBin is 58 (1500,1600) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1500_1600.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1500_1600.out
+HardCrossSection=4.55052e-14+/-8.083e-17
+Current pTHatBin is 59 (1600,1700) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1600_1700.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1600_1700.out
+HardCrossSection=1.15306e-14+/-2.09517e-17
+Current pTHatBin is 60 (1700,1800) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1700_1800.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1700_1800.out
+HardCrossSection=2.65264e-15+/-4.91228e-18
+Current pTHatBin is 61 (1800,1900) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1800_1900.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1800_1900.out
+HardCrossSection=5.33355e-16+/-1.00683e-18
+Current pTHatBin is 62 (1900,2000) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin1900_2000.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin1900_2000.out
+HardCrossSection=8.90351e-17+/-1.69184e-19
+Current pTHatBin is 63 (2000,2200) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin2000_2200.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin2000_2200.out
+HardCrossSection=1.24753e-17+/-2.30785e-20
+Current pTHatBin is 64 (2200,2400) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin2200_2400.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin2200_2400.out
+HardCrossSection=4.80387e-20+/-9.02107e-23
+Current pTHatBin is 65 (2400,2510) GeV
+Hadron File =/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/JetscapeHadronListBin2400_2510.out
+HardCrossSectionFile=/nfs/zfs2/RawData/RUN5_PP_5020GeV/FinalData/SigmaHardBin2400_2510.out
+HardCrossSection=1.66686e-24+/-2.78112e-27

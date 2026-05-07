@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<jetscape>
+  
+  <nEvents> 100000 </nEvents>
+  <outputFilename>test_out_pp_pythiagun_jetsmith</outputFilename>
+  <JetScapeWriterAscii> on </JetScapeWriterAscii>
+
+  <Random>
+    <seed>1</seed>
+  </Random>
+
+  <!-- Inital State Module  -->
+  <!--IS>
+    <Trento> </Trento>
+  </IS-->
+  
+  <!-- Hard Process -->
+  <Hard>
+    <PythiaGun>
+      <pTHatMin>100</pTHatMin>
+      <pTHatMax>110</pTHatMax>
+      <eCM>5020</eCM>
+    </PythiaGun>
+
+    <!--PGun>
+      <parID>21</parID>
+      <pT>100</pT>
+    </PGun-->
+  </Hard>
+  
+  <!--Preequilibrium Dynamics Module -->
+  <!--Preequilibrium>
+    <NullPreDynamics> </NullPreDynamics>
+  </Preequilibrium-->
+  
+  <!-- Hydro  Module  -->
+  <!--Hydro>
+    <Brick bjorken_expansion_on="false" start_time="0.0">
+          <T>0.3</T>
+    </Brick>
+  </Hydro-->  
+
+  <!--Eloss Modules -->
+  <Eloss>
+    <maxT>500.0</maxT>
+    <CustomModuleJetsmith>
+      <vir_factor> 1.0 </vir_factor>
+      <in_vac> 1 </in_vac>
+      <recoil> 0 </recoil>
+      <w_qqq> 0 </w_qqq>
+      <w_EQCD> 0 </w_EQCD>
+      <fb_conv> 0 </fb_conv>
+      <just_scatt> 0 </just_scatt>
+      <alpha_s_eff> 0.25 </alpha_s_eff>
+      <t_switch> 1.0  </t_switch>
+      <hydro_Tc> 0.16 </hydro_Tc>
+      <N_taup>   1000     </N_taup>
+      <dtaup>    0.5      </dtaup> 
+      <dtaup_HD> 0.005 </dtaup_HD>
+      <tol_scatt> 0.0002 </tol_scatt>
+      <tol_I>     0.001 </tol_I>
+      <tol_LOG_g> 0.0001 </tol_LOG_g>
+      <tol_LOG_q> 0.0001 </tol_LOG_q>
+      <tol_root_t_g> 0.00000000000001 </tol_root_t_g>
+      <tol_root_t_q> 0.00000000000001 </tol_root_t_q>
+      <tol_root_z_g> 0.00000000000001 </tol_root_z_g>
+      <tol_root_z_q> 0.00000000000001 </tol_root_z_q>
+      <N_iter_root_t_g> 100 </N_iter_root_t_g>
+      <N_iter_root_t_q> 100 </N_iter_root_t_q>
+      <N_iter_root_z_g> 100 </N_iter_root_z_g>
+      <N_iter_root_z_q> 100 </N_iter_root_z_q>
+    </CustomModuleJetsmith>
+  </Eloss>
+  
+  <!--PartonPrinter>
+      <FileName>./FinalPartonsInfo.dat</FileName>
+  </PartonPrinter-->
+  
+  <!-- Jet Hadronization Module -->
+  <JetHadronization>
+    <name>colorless</name>
+    <eCMforHadronization>5020</eCMforHadronization>
+  </JetHadronization>
+  
+</jetscape>

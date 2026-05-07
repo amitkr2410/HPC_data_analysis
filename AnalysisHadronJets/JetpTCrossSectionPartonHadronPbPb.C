@@ -9,8 +9,8 @@
 
 #include <iostream>
 // FastJet3 library.
-#include "/wsu/home/fy/fy41/fy4125/Software/pythia8230/include/Pythia8/Pythia.h"
-#include "/wsu/home/fy/fy41/fy4125/Software/pythia8230/include/Pythia8/FJcore.h"
+#include "/nfs/zfs2/Software/pythia8309/include/Pythia8/Pythia.h"
+#include "/nfs/zfs2/Software/pythia8309/include/Pythia8/FJcore.h"
 #include <fstream>
 #include <cstdio>
 #include "iomanip"
@@ -45,21 +45,21 @@ int main(int argc, char* argv[]){
 // [1] InputDataFileDIR [2] OutputDataFileName  [3]=CMS or Atlas or Alice or STAR, [4]= 200, 2760 or 5020, 7000 [5]=JetRadius, [6]=EtaJetMin, [7]=EtaJetMax    [8] EtaTrackMax [9] pTTrackMin [10] EtaCutFlag =eta or y [11] ChargedFlag 0 or 1 (all or charged)  [12]=JetscapeORPythia, [13] HadronORParton [14] BGS ( 0 or 1 pp, pbpb)  
 
    char InputDataFileDIR[100000], OutputDataFileName[100000], JetscapeORPythia[100], HadronORParton[100];
-   sprintf(InputDataFileDIR,"%s",argv[1]);
-   sprintf(OutputDataFileName,"%s",argv[2]);
-   sprintf(JetscapeORPythia,"%s",argv[12]);
-   sprintf(HadronORParton,"%s",argv[13]);
+   sprintf(InputDataFileDIR,"%s",argv[1]);//"/nfs/zfs2/RawData/Run2_PP_5020GeV/FinalData");//argv[1]);
+   sprintf(OutputDataFileName,"%s",argv[2]);//"JetCrosssection_Jetsmith_pp_5020GeV_Atlas_antikt_R0p4_y2p8_BGSm1_maxT500_virf_0p00");//argv[2]);
+   sprintf(JetscapeORPythia,"%s","Jetscape");//argv[12]);
+   sprintf(HadronORParton,"%s","Hadron");//argv[13]);
    
-   string ExpName=string(argv[3]);
-   int Ecm = atoi(argv[4]);
-   double JetRadius = atof(argv[5])/1.0;                                                             
-   double EtaJetMin = atof(argv[6])/1.0;
-   double EtaJetMax=atof(argv[7])/1.0;                                                        
-   double EtaTrackMax=atof(argv[8])/1.0;
-   double pTTrackMin= atof(argv[9])/1.0;
-   int EtaCutFlag =atoi(argv[10]); //0 or 1; 0 to use rapididty cut, 1 to use eta cut
-   int ChargedFlag = atoi(argv[11]); // 0 or 1; 0 means all particle, 1 means only charged
-   int BGS = atoi(argv[14]);  //0 pp, 1 pbpb
+   string ExpName="Atlas";//string(argv[3]);
+   int Ecm = 5020;//atoi(argv[4]);
+   double JetRadius = 0.4;//atof(argv[5])/1.0;                                                             
+   double EtaJetMin = 0.0;//atof(argv[6])/1.0;
+   double EtaJetMax=0.3;//atof(argv[7])/1.0;                                                        
+   double EtaTrackMax=3.0;//atof(argv[8])/1.0;
+   double pTTrackMin= 0.002;//atof(argv[9])/1.0;
+   int EtaCutFlag =0;//atoi(argv[10]); //0 or 1; 0 to use rapididty cut, 1 to use eta cut
+   int ChargedFlag = 0;//atoi(argv[11]); // 0 or 1; 0 means all particle, 1 means only charged
+   int BGS = -1;//atoi(argv[14]);  //-1, 0 pp, 1 pbpb
    double JetpTMin = 1; //in GeV
 
    int *pTHatMin;
@@ -168,26 +168,41 @@ int main(int argc, char* argv[]){
 
   int Error =0; //set to 1 if wants statistical error only
   //double JetpTBinWidth = (JetpTMax - JetpTMin)/NpTJetBin;
-  double HardCrossSection[NpTHardBin];
-  double HardCrossSectionError[NpTHardBin];
-  double dNdpTCount[NpTHardBin][NpTJetBin];  //[ptHatBin] [Regular pt]
-  double pTHardBinJetBinError[NpTHardBin][NpTJetBin];
-  double TotalCrossSection[NpTJetBin];
-  double TotalCrossSectionError[NpTJetBin];
-  int Events[NpTHardBin];
-  int NetJetEvents[NpTHardBin];
+  //double HardCrossSection[NpTHardBin];
+  //double HardCrossSectionError[NpTHardBin];
+  //double dNdpTCount[NpTHardBin][NpTJetBin];  //[ptHatBin] [Regular pt]
+  //double pTHardBinJetBinError[NpTHardBin][NpTJetBin];
+  //double TotalCrossSection[NpTJetBin];
+  //double TotalCrossSectionError[NpTJetBin];
+  //int Events[NpTHardBin];
+  //int NetJetEvents[NpTHardBin];
   int HashFlag;
+
+  double *HardCrossSection = new double[NpTHardBin];
+  double *HardCrossSectionError = new double[NpTHardBin];  
+  double **dNdpTCount = new double*[NpTHardBin]; //[NpTHardBin][NpTJetBin]
+  double **pTHardBinJetBinError = new double*[NpTHardBin]; //[NpTHardBin][NpTJetBin]
+  for (int i = 0; i < NpTHardBin; i++)
+      {
+	dNdpTCount[i] = new double[NpTJetBin];
+	pTHardBinJetBinError[i] = new double[NpTJetBin];
+      }
+  double *TotalCrossSection = new double[NpTJetBin];
+  double *TotalCrossSectionError = new double[NpTJetBin];
+  int *Events = new int[NpTHardBin];
+  int *NetJetEvents = new int[NpTHardBin];
+
 // Histograms.
   TH1D *HistTemp = new TH1D("JetSpectrumBin", "Jet Spectrum pT", NpTJetBin, JetpTBin); //5GeV Bin CountVspT
 
   ofstream EventR, EventA, foutput; char VarFileName[100000];
-  sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/JetFiles/EventRecord%s.txt",OutputDataFileName);
+  sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/JetFiles/EventRecord%s.txt",OutputDataFileName);
   EventR.open(VarFileName,ios::out);
-  sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/JetFiles/CodeCheck%s.txt",OutputDataFileName);
+  sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/JetFiles/CodeCheck%s.txt",OutputDataFileName);
   EventA.open(VarFileName,ios::out);
-  sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/JetFiles/%s.root",OutputDataFileName); // name of the output root file               
+  sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/JetFiles/%s.root",OutputDataFileName); // name of the output root file               
   TFile* outFile = new TFile( VarFileName, "RECREATE");
-  sprintf(VarFileName,"/wsu/home/fy/fy41/fy4125/RUN/FastJet/JetFiles/%s.txt",OutputDataFileName);
+  sprintf(VarFileName,"/nfs/zfs2/Research/HPC_data_analysis/AnalysisHadronJets/JetFiles/%s.txt",OutputDataFileName);
   foutput.open(VarFileName,ios::out);
   cout<<"Final result will be store in  File="<<VarFileName<<endl;
   EventA<<"OutputFile Name is "<<VarFileName<<endl;
@@ -232,7 +247,7 @@ int main(int argc, char* argv[]){
      Events[k] =0;
      NetJetEvents[k] = 0;
      string EventLabel, MyString("#");
-     while ( myfile >> EventLabel ) 
+     while ( myfile >> EventLabel  ) 
        {
 	 if( MyString.compare(EventLabel)==0 && fjInputs.size()>0 )
 	   {
@@ -409,10 +424,14 @@ int main(int argc, char* argv[]){
    }
   
   EventR.close();
+  EventA.close();
   cout<<"Wrote the Final Histogram in ROOT file "<<endl;
 
   //Saving the hardpTBin crosssection vs pTBin
-  double pTHatError[NpTHardBin], pTHatAvg[NpTHardBin];
+  //double pTHatError[NpTHardBin], pTHatAvg[NpTHardBin];
+  double *pTHatError = new double[NpTHardBin];
+  double *pTHatAvg = new double[NpTHardBin];
+
   for(int k=0; k<NpTHardBin; k++)
     {
       pTHatError[k]= (pTHatMax[k] - pTHatMin[k])/2.0;
@@ -422,8 +441,10 @@ int main(int argc, char* argv[]){
   GHardCrossSection->SetName("GHardCrossSection");
   GHardCrossSection->Write();
 
-//Computing CrossSection with Error and saving as TGraphError
-  double CrossSection[NpTJetBin],CrossSectionError[NpTJetBin],pT[NpTJetBin],pTError[NpTJetBin];  
+  //Computing CrossSection with Error and saving as TGraphError
+  //double CrossSection[NpTJetBin],CrossSectionError[NpTJetBin],pT[NpTJetBin],pTError[NpTJetBin];
+  double *CrossSection = new double[NpTJetBin]; double *CrossSectionError = new double[NpTJetBin];
+  double *pT = new double[NpTJetBin]; double *pTError = new double[NpTJetBin];
   TGraphErrors *GE;
   for(int j=0; j<NpTJetBin;j++)
     {
@@ -472,6 +493,20 @@ int main(int argc, char* argv[]){
   GETotal->Write();
   foutput.close();
 
+  delete[] pTHatMin; delete[] pTHatMax; delete[] JetpTBin;
+  delete[] HardCrossSection; delete[] HardCrossSectionError;
+  for (int i = 0; i < NpTHardBin; i++)
+      {
+        delete[] dNdpTCount[i];
+        delete[] pTHardBinJetBinError[i];
+      }
+  delete[] dNdpTCount; delete[] pTHardBinJetBinError;
+  delete[] TotalCrossSection; delete[] TotalCrossSectionError;
+  delete[] Events; delete[] NetJetEvents;
+  delete[] pTHatError; delete[] pTHatAvg;
+  delete[] CrossSection; delete[] CrossSectionError;
+  delete[] pT; delete[] pTError;
+  
   // Deleting Dynamic pointers
   delete HistTemp;
   delete GE;

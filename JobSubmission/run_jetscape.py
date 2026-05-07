@@ -5,14 +5,18 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 import SetupXML
 
-def Main():
-    JETSCAPEDIR="/nfs/zfs2/RawData/C-SCAPE-COMP"          #Change
-    RawOutputDIR="/nfs/zfs2/RawData/RunPP_5020GeV"        #Change
+def Main(argv):
+    NodeName=argv[1] #i48c a96c
+    RunName=argv[2] #RunPP_5020GeV
+    XMLName=argv[3] #jetscape_pp_jetsmith_5020.xml
+    
+    JETSCAPEDIR="/nfs/zfs2/RawData/C-SCAPE-COMP"             #Change
+    RawOutputDIR="/nfs/zfs2/RawData/" + RunName       #Change
     TestOutDIR= RawOutputDIR + "/TestOut"
     FinalOutputDIR= RawOutputDIR + "/FinalData"
-    CodeDIR="/home/amit/CloudComputing/JobSubmission"    #Change this line
+    CodeDIR="/nfs/zfs2/Research/HPC_data_analysis/JobSubmission"    #Change this line
     Exec=CodeDIR +"/RUN.sh"
-    UserXML="/nfs/zfs2/RawData/jetscape_pp_jetsmith_5020.xml"   #Change
+    UserXML="/nfs/zfs2/Research/HPC_data_analysis/XML/" + XMLName   #Change
 
     Command="  mkdir  " + TestOutDIR
     if os.path.isdir(TestOutDIR)==False:
@@ -53,15 +57,13 @@ def Main():
             print(XMLARGV)
             SetupXML.GenerateXML(XMLARGV)
             
-            Command = "sbatch   -N 1 -n 1 --mem=4G --time=7-00:00:00 --nodelist=i48c  --job-name " + JobName
+            Command = "sbatch   -N 1 -n 1 --mem=4G --time=7-00:00:00 --nodelist="+NodeName + " --job-name " + JobName
             Command = Command +  "  -o " + JobLogFile + " -e " +  JobErrFile + " -- " +  Exec + " " + JETSCAPEDIR 
             Command = Command +  "  " + XML + " " + TestOutFile + " " + HadronFile + " " + PartonFile + " " + LogFile
             print(Command)
             
             os.system(Command)
 
-            Command = Command  + " >> " + LogFile
-            os.system(Command)
 
 def ptHardBins(i):
     #Ecm=5.02TeV; size of bins is 67
@@ -78,5 +80,6 @@ def ptHardBins(i):
 
 
 if __name__ == "__main__":
-    Main()
+    argv =sys.argv
+    Main(argv)
     print("Hello, World!")

@@ -45,6 +45,7 @@
   <Eloss>
     <maxT>500.0</maxT>
     <CustomModuleJetsmith>
+      <vir_factor> 0.5 </vir_factor>
       <in_vac> 1 </in_vac>
       <recoil> 0 </recoil>
       <w_qqq> 0 </w_qqq>
