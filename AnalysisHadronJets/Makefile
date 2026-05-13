@@ -25,7 +25,7 @@ PREFIX_INCLUDE=${PYTHIA}/include
 PREFIX_LIB=${PYTHIA}/lib
 PREFIX_SHARE=${PYTHIA}/share/Pythia8
 ENABLE_SHARED=true
-CXX=g++  -std=c++17
+CXX=g++  -std=c++17 -fopenmp
 CXX_COMMON=-O2  -pedantic -W -Wall -Wshadow -fPIC
 CXX_SHARED=-shared
 CXX_SONAME=-Wl,-soname,
